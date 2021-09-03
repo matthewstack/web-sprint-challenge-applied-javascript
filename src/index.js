@@ -8,6 +8,6 @@ import { headerAppender } from './components/header'
 headerAppender('.header-container')
 tabsAppender('.tabs-container')
 cardAppender('.cards-container')
-// setting up code grade
+// setting up codegrade
 
 console.log('Lambda Times loaded!')
