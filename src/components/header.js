@@ -11,7 +11,58 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
+
+  const theHeader = document.createElement('div')
+  const theDate = document.createElement('span')
+  const theTitle = document.createElement('h1')
+  const theTemp = document.createElement('span')
+
+  theHeader.classList.add('header')
+  theDate.classList.add('date')
+  theTemp.classList.add('temp')
+
+  theDate.textContent = date;
+  theTitle.textContent = title;
+  theTemp.textContent = temp;
+
+  theHeader.appendChild(theDate)
+  theHeader.appendChild(theTitle)
+  theHeader.appendChild(theTemp)
+
+
+
+// console.log(Header('test', 'blah', 'blahblah'))
+
+//   return theHeader
+
+  // instanting the elements
+  // const theHeader = document.createElement('div')
+  // const theDate = document.createElement('span')
+  // const theTitle = document.createElement('h1')
+  // const theTemp = document.createElement('span')
+  
+  // setting class names
+  // theHeader.classList.add('header')
+  // theDate.classList.add('date')
+  // theTitle.classList.add('h1')
+  // theTemp.classList.add('temp')
+  // setting text
+  // theDate.textContent = date;
+  // theTitle.textContent = title;
+  // theTemp.textContent = temp;
+  // creating heirarchy
+  // theHeader.appendChild(theDate)
+  // theHeader.appendChild(theTitle)
+  // theHeader.appendChild(theTemp);
+
+  // return statement
+  return theHeader;
+
 }
+// console.log(Header('The title', 'the date', 'the temp'))
+
+
+
 
 const headerAppender = (selector) => {
   // TASK 2
@@ -20,6 +71,8 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
+  document.querySelector(selector).appendChild(Header())
+  return headerAppender;
 }
 
 export { Header, headerAppender }
